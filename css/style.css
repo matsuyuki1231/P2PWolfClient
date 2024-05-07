@@ -1,0 +1,400 @@
+body {
+    margin: 0;
+    font-family: "M PLUS 1", sans-serif;
+    background-color: black;
+}
+
+.backgroundDiv {
+    z-index: 1;
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.backgroundDiv img {
+    z-index: 1;
+    position: fixed;
+}
+
+.backgroundAdjustToWidth {
+    width: 100vw;
+}
+
+.backgroundAdjustToHeight {
+    height: 100vh;
+}
+
+.header {
+    z-index: 5;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.84);
+    width: 100vw;
+    height: 60px;
+    border-bottom: rgba(206, 206, 206, 0.58) 1px solid;
+    place-content: center;
+    overflow: hidden;
+    line-height: 60px;
+    padding: 0;
+}
+
+.standardContent {
+    margin: 20px;
+    border-radius: 8px;
+    border: white 1px solid;
+    width: calc(50% - 41px); /* Note that margin does not include width */
+    box-sizing: border-box;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px #e4a7ff,0 0 15px #e4a7ff;
+}
+
+@media (max-width: 1020px) {
+    .standardContent {
+        width: calc(100% - 11px); /* Note that margin does not include width */
+        margin: 5px 20px 40px 5px
+    }
+}
+
+#logo {
+    color: #fff;
+    text-shadow: 0 0 10px white,0 0 15px white;
+    font-size: 27px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    vertical-align: middle;
+    margin: 4px 0 0 27vw;
+    letter-spacing: 1px;
+}
+
+#headerUserIconWrapper {
+    margin: 0 20px 0 auto;
+    position: relative;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    background-color: rgb(194, 194, 194);
+    clip-path: circle(22px);
+    z-index: 2;
+}
+
+#headerUserIcon {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 40px;
+    height: 40px;
+    clip-path: circle(20px);
+    z-index: 3;
+}
+
+#contentWrapper {
+    position: fixed;
+    display: flex;
+    width: 95vw;
+    margin: 60px 0 20px 0;
+    height: calc(100vh - 60px - 30px - 30px); /* In order to available % in pc screen */
+    padding: 30px 2.5vw;
+    z-index: 2;
+    flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (min-width: 1021px) {
+    #contentWrapper {
+        flex-wrap: wrap;
+    }
+}
+
+#controlButtonWrapper {
+    display: flex;
+    height: 60px;
+    border: none;
+    background-color: #c4c4c4ff;
+    overflow: hidden;
+}
+
+.controlButton {
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controlButton img {
+    height: 70%;
+    overflow: hidden;
+}
+
+#memberList {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (min-width: 1021px) {
+    #memberList {
+        height: calc(100% - 60px - 80px); /* Diff between contentWrapper and controlButtonWrapper */
+    }
+}
+
+.memberWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 40px;
+    border-bottom: rgba(174, 174, 174, 0.6) 1px solid;
+}
+
+.memberStatusWrapper {
+    flex-basis: fit-content;
+    border-left: rgba(174, 174, 174, 0.6) 1px solid;
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: row-reverse;
+}
+
+.memberStatusWrapper img {
+    height: 20px;
+    margin: 7px;
+}
+
+.volumeAdjustableBox {
+    flex-grow: 1;
+    position: relative;
+}
+
+.volumeAdjustableBox * {
+    position: absolute;
+}
+
+.volumeAdjustableBox p {
+    color: white;
+    text-align: left;
+    top: 0;
+    left: 0;
+    height: 40px;
+    padding: 5px 0 2px 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.nonConnection {
+    color: rgb(143, 143, 143) !important;
+}
+
+.volumeAdjustableBox input[type="range"] {
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 6px;
+    border-radius: 0;
+    cursor: pointer;
+    appearance: none;
+    background: linear-gradient(to right, rgba(94, 0, 255, 0.32) 50%, rgba(255, 255, 255, 0) 50%);
+}
+
+.volumeAdjustableBox input[type="range"]::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 0, 0, 0);
+}
+
+.volumeAdjustableBox input[type="range"]::-webkit-slider-thumb {
+    appearance:none;
+    background: none;
+    width: 10px;
+    height: 10px;
+}
+
+.virtualVolumeSlider {
+    background-color: rgba(88, 88, 88, 0.46);
+    width: 100%;
+    height: 6px;
+    bottom: 0;
+}
+
+#log {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    padding: 10px;
+    border: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background: rgba(30, 29, 45, 0.47);
+}
+
+#log p {
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    margin: 0;
+    color: #c9c1e7;
+    font-weight: 200;
+    word-break: break-all;
+    font-family: "Yomogi", sans-serif;
+}
+
+@media (min-width: 1021px) {
+    #log {
+        height: calc(100% - 40px);
+    }
+}
+
+.breakLine {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.errorLog {
+    color: #ff95b7 !important;
+}
+
+.errorLog::before {
+    content: "[error] ";
+}
+
+.errorLog::after {
+    content: "エラーが発生したため、これ以上の処理を続けることができません。問題を解決した後、このページをリロードしここまでの操作をやり直してください。";
+    display: block;
+    color: #b076e7;
+}
+
+.systemLog::before {
+    content: "[sys] ";
+}
+
+.noticeLog {
+    color: #c895ff !important;
+}
+
+.noticeLog::before {
+    content: "[notice] ";
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalBackground {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.38);
+}
+
+.modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    height: fit-content;
+    width: 70vw;
+    background-color: #121212;
+    border-radius: 8px;
+    border: #8c49ff 3px solid;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 0.2rem;
+    right: 1rem;
+    cursor: pointer;
+    color: #8c49ff;
+    font-size: 25px;
+}
+
+.modalContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalContents p {
+    color: white;
+    text-align: center;
+    font-weight: 200;
+    font-size: 13px;
+    margin: 30px 10px;
+}
+
+#modalUserIconWrapper {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    margin-top: 30px;
+    background-color: rgb(194, 194, 194);
+    clip-path: circle(42px);
+    z-index: 2;
+}
+
+#modalUserIcon {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 80px;
+    height: 80px;
+    clip-path: circle(40px);
+    z-index: 3;
+}
+
+#audioBox {
+    display: none;
+}
+
+#connectionConfirmModal {
+    display: block;
+}
+
+#connectionConfirmButton {
+    margin: 0 0 25px 0;
+    width: 5em;
+    height: 2.5em;
+    font-family: "M PLUS 1", sans-serif;
+    font-weight: 700;
+    background:  none;
+    border: #8c49ff 3px solid;
+    color: #cdcdcd;
+}
+
+#connectionConfirmButton:hover {
+    color: #121212;
+    background-color: #8c49ff;
+}
+
+#minecraftJoinStatus {
+    background-color: #e0b8ac;
+}
