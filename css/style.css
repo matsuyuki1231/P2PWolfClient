@@ -72,6 +72,16 @@ body {
     letter-spacing: 1px;
 }
 
+.messageDiv {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.messageDiv p {
+    transition: 0.5s ease-out;
+    transform: translateY(-100%);
+}
+
 #headerUserIconWrapper {
     margin: 0 20px 0 auto;
     position: relative;
@@ -398,3 +408,4 @@ body {
 #minecraftJoinStatus {
     background-color: #e0b8ac;
 }
+
