@@ -310,6 +310,14 @@ body {
     content: "[notice] ";
 }
 
+.remoteLog {
+    color: #adcaff !important;
+}
+
+.remoteLog::before {
+    content: "[remote] ";
+}
+
 .modal {
     display: none;
     position: fixed;
