@@ -222,6 +222,10 @@ body {
     background: linear-gradient(to right, rgba(94, 0, 255, 0.32) 50%, rgba(255, 255, 255, 0) 50%);
 }
 
+.speakerVolumeAdjustableBox input[type="range"] {
+    background: linear-gradient(to right, rgba(0, 255, 157, 0.32) 50%, rgba(255, 255, 255, 0) 50%);
+}
+
 .volumeAdjustableBox input[type="range"]::before {
     position: absolute;
     content: "";
