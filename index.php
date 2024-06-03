@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200;500;700;900&family=Roboto:wght@400;700&family=Yomogi&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>YMGS Sync Communicator</title>
 <?php

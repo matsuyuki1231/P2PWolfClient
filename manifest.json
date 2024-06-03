@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "YMGS Sync Communicator",
+  "short_name": "Sync Communicator",
+  "start_url": "https://vc-ymgs.f5.si",
+  "display": "fullscreen",
+  "background_color": "#000",
+  "description": "よもぎサーバーで行われるマイクラ人狼用のVCを提供します"
+}
