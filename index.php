@@ -75,7 +75,7 @@ PHP_EOL;
     <div class="modalBackground" id="connectionConfirmModalBackground"></div>
     <div class="modalWrapper">
         <div class="modalContents">
-            <p>接続の用意ができましたら下のボタンを押してください</p>
+            <p id="connectionConfirmText">接続の用意ができましたら下のボタンを押してください</p>
             <button id="connectionConfirmButton">接続</button>
         </div>
     </div>
