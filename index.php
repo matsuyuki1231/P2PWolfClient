@@ -56,7 +56,13 @@ PHP_EOL;
     </div>
     <div id="memberList" class="standardContent">
     </div>
-    <div id="log" class="standardContent">
+    <div id="logWrapper" class="standardContent">
+        <div id="log">
+        </div>
+        <div id="chatWrapper">
+            <input type="text" id="chatInput">
+            <img src="resource/chat_submit.png" alt="チャットの送信ボタン" id="chatSubmit">
+        </div>
     </div>
 </div>
 <section id="userInfoModal" class="modal">

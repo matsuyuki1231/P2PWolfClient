@@ -250,18 +250,67 @@ body {
     bottom: 0;
 }
 
-#log {
+#logWrapper {
     display: flex;
     flex-direction: column;
     height: 500px;
-    padding: 10px;
+    padding: 0;
     border: none;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    background: rgba(30, 29, 45, 0.47);
+}
+
+#log {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% - 80px);
     overflow: scroll;
+    padding: 10px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background: rgba(30, 29, 45, 0.47);
+}
+
+#chatWrapper {
+    display: flex;
+    flex-basis: 32px;
+    margin: 14px;
+    border: rgba(255, 255, 255, 0.37) 1px solid;
+    border-radius: 4px;
+}
+
+#chatInput {
+    padding-left: 7px;
+    flex-basis: calc(100% - 32px);
+    height: 100%;
+    border: none;
+    color: rgba(255, 255, 255, 0.69);
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: "Yomogi", sans-serif;
+}
+
+#chatInput::selection {
+    background-color: rgba(201, 193, 231, 0.20);
+}
+
+#chatSubmit {
+    height: 20px;
+    padding: 6px;
+}
+
+.shiver {
+    animation: shiverAnim 0.1s  infinite;
+}
+
+@keyframes shiverAnim {
+    0% {transform: translate(0px, 0px)}
+    25% {transform: translate(2px, 2px)}
+    50% {transform: translate(0px, 2px)}
+    75% {transform: translate(2px, 0px)}
+    100% {transform: translate(0px, 0px)}
 }
 
 #log p {
@@ -276,7 +325,7 @@ body {
 }
 
 @media (min-width: 1021px) {
-    #log {
+    #logWrapper {
         height: calc(100% - 40px);
     }
 }
@@ -296,6 +345,10 @@ body {
     content: "[error] ";
 }
 
+.errorLog::selection {
+    background-color: rgba(255, 149, 183, 0.20);
+}
+
 .errorLog::after {
     content: "エラーが発生したため、これ以上の処理を続けることができません。問題を解決した後、このページをリロードしここまでの操作をやり直してください。";
     display: block;
@@ -306,6 +359,18 @@ body {
     content: "[sys] ";
 }
 
+.systemLog::selection {
+    background-color: rgba(201, 193, 231, 0.20);
+}
+
+.stdLog {
+
+}
+
+.stdLog::selection {
+    background-color: rgba(201, 193, 231, 0.20);
+}
+
 .noticeLog {
     color: #c895ff !important;
 }
@@ -314,12 +379,21 @@ body {
     content: "[notice] ";
 }
 
+
+.noticeLog::selection {
+    background-color: rgba(200, 149, 255, 0.20);
+}
+
 .remoteLog {
     color: #adcaff !important;
 }
 
 .remoteLog::before {
     content: "[remote] ";
+}
+
+.remoteLog::selection {
+    background-color: rgba(173, 202, 255, 0.20);
 }
 
 .modal {
