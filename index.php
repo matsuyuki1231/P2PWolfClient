@@ -29,24 +29,25 @@ PHP_EOL;
 <script src="lib/model/UserSetting.js"></script>
 <script src="lib/model/Member.js"></script>
 <script src="lib/model/SoundEffects.js"></script>
+<script src="lib/model/TextReading.js"></script>
 <script src="lib/main.js"></script>
 <div class="backgroundDiv">
     <img src="resource/background.png" id="background" alt="紫色の幾何学模様の背景画像">
 </div>
 <header class="header">
     <p id="logo">YMGS Sync Communicator</p>
-    <div id="headerUserIconWrapper">
+    <button id="headerUserIconWrapper">
         <img src="resource/unknown_user.png" alt="ユーザーのDiscordアイコン" id="headerUserIcon">
-    </div>
+    </button>
 </header>
 <div id="contentWrapper">
     <div id="controlButtonWrapper" class="standardContent">
-        <div class="controlButton" id="muteButton">
+        <button class="controlButton" id="muteButton">
             <img src="resource/mike_mute.png" alt="押すとミュートが解除されるマイクのボタン" id="muteButtonImg">
-        </div>
-        <div class="controlButton" id="speakerMuteButton">
+        </button>
+        <button class="controlButton" id="speakerMuteButton">
             <img src="resource/speaker_unmute.png" alt="押すとスピーカーがミュートされるボタン" id="speakerMuteButtonImg">
-        </div>
+        </button>
         <div class="controlButton" id="serverMuteStatus">
             <img src="resource/server_unmute.png" alt="サーバーミュートされていないことを示すアイコン" id="serverMuteStatusImg">
         </div>
@@ -73,8 +74,44 @@ PHP_EOL;
                 <img src="resource/unknown_user.png" alt="ユーザーのDiscordアイコン" id="modalUserIcon">
             </div>
             <p id="modalUserInformation">Discord未連携</p>
+            <button id="modalUserLicenceButton" tabindex="1"><p class="modalBold">ライセンスを表示</p></button>
         </div>
-        <div id="userInfoModalCloseButton" class="modalCloseButton">×</div>
+        <button id="userInfoModalCloseButton" class="modalCloseButton" tabindex="2">×</button>
+    </div>
+</section>
+<section id="licenseModal" class="modal">
+    <div class="modalBackground" id="licenseModalBackground"></div>
+    <div class="modalWrapper">
+        <div class="modalContents" id="licenseModalContents">
+            <p id="modalLicenseInformation">
+                <span class="modalBold">当サイト内で使用しているコンテンツのうちライセンスの表記が必要なものについて、以下の通り記します。
+                <br>なお、状況により使用しない場合もあります。</span class="modalBold">
+                <br>VOICEVOX:四国めたん
+                <br>VOICEVOX:ずんだもん
+                <br>VOICEVOX:春日部つむぎ
+                <br>VOICEVOX:雨晴はう
+                <br>VOICEVOX:波音リツ
+                <br>VOICEVOX:玄野武宏
+                <br>VOICEVOX:白上虎太郎
+                <br>VOICEVOX:青山龍星
+                <br>VOICEVOX:冥鳴ひまり
+                <br>VOICEVOX:九州そら
+                <br>VOICEVOX:もち子さん (cv 明日葉よもぎ)
+                <br>VOICEVOX:剣崎雌雄
+                <br>VOICEVOX:WhiteCUL
+                <br>VOICEVOX:後鬼
+                <br>VOICEVOX:No.7
+                <br>VOICEVOX:櫻歌ミコ
+                <br>VOICEVOX:小夜/SAYO
+                <br>VOICEVOX:ナースロボ＿タイプＴ
+                <br>VOICEVOX:猫使アル
+                <br>VOICEVOX:猫使ビィ
+                <br>VOICEVOX:あいえるたん
+                <br>VOICEVOX:琴詠ニア
+                <br>Voice By ondoku3.com
+            </p>
+        </div>
+        <button id="licenseModalCloseButton" class="modalCloseButton">×</button>
     </div>
 </section>
 <section id="connectionConfirmModal" class="modal">
@@ -82,7 +119,7 @@ PHP_EOL;
     <div class="modalWrapper">
         <div class="modalContents">
             <p id="connectionConfirmText">接続の用意ができましたら下のボタンを押してください</p>
-            <button id="connectionConfirmButton">接続</button>
+            <button id="connectionConfirmButton" tabindex="2">接続</button>
         </div>
     </div>
 </section>

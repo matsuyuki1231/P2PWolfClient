@@ -4,6 +4,14 @@ body {
     background-color: black;
 }
 
+button {
+    border: none;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
 .backgroundDiv {
     z-index: 1;
     margin: 0;
@@ -396,6 +404,18 @@ body {
     background-color: rgba(173, 202, 255, 0.20);
 }
 
+.transferLog {
+    color: #adcaff !important;
+}
+
+.transferLog::before {
+    content: "[transfer] ";
+}
+
+.transferLog::selection {
+    background-color: rgba(173, 202, 255, 0.20);
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -431,6 +451,7 @@ body {
     cursor: pointer;
     color: #8c49ff;
     font-size: 25px;
+    margin-top: 3px;
 }
 
 .modalContents {
@@ -439,7 +460,7 @@ body {
     align-items: center;
 }
 
-.modalContents p {
+.modalContents p, .modalContents button {
     color: white;
     text-align: center;
     font-weight: 200;
@@ -465,6 +486,52 @@ body {
     height: 80px;
     clip-path: circle(40px);
     z-index: 3;
+}
+
+#modalUserLicenceButton {
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    padding: 0;
+}
+
+#modalUserLicenceButton p {
+    color: #8c49ff;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+#modalUserLicenceButton:hover {
+    text-decoration: underline;
+}
+
+#licenseModalContents {
+    margin: 40px;
+    height: 40vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#licenseModalContents::-webkit-scrollbar {
+    width: 6px;
+}
+
+#licenseModalContents::-webkit-scrollbar-track {
+    background: none;
+}
+
+#licenseModalContents::-webkit-scrollbar-thumb {
+    background-color: #331b5d;
+    border-radius: 3px;
+}
+
+#modalLicenseInformation {
+    text-align: left;
+    margin: 0;
+}
+
+.modalBold {
+    font-weight: 500;
 }
 
 #audioBox {
